@@ -75,7 +75,7 @@ async function generateEbook() {
     epub = makepub.document(metadata, "./cover/cover.jpg");
     epub.addCSS("h1>a{color:inherit;text-decoration:none}.comment-parent{margin-left:0!important}.comment{margin-left:5px;padding-left:5px;border-left:1px solid gray;}");
 
-    await getContent("https://old.reddit.com/" + subreddit + '/new.json?limit=10&sort=new');
+    await getContent("https://old.reddit.com/" + subreddit + '/top.json?limit=10&sort=top&t=all');
 
     await epub.writeEPUB(function (e) {
         console.log("Error:", e);
